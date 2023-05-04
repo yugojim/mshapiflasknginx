@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?><cdp:ContentPackage xmlns="urn:hl7-org:v3" xmlns:cdp="http://www.hl7.org.tw/EMR/CDocumentPayload/v1.0" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.hl7.org.tw/EMR/CDocumentPayload/v1.0CDA_Package_V01.xsd"><cdp:ContentContainer range="0">
+		<cdp:StructuredContent>
+			<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd">
+				<typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3" />
+				<templateId extension="116_V104.1" root="2.16.886.101.20003.20014" />
+				<id extension="55221143.20101122.J221555999.1" root="2.16.886.104.100047" />
+				<code code="18782-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="X-ray Report">
+					<translation code="32001C" codeSystem="2.16.886.101.20003.20014" displayName="胸腔檢查" />
+				</code>
+				<title>胸腔X光檢查</title>
+				<effectiveTime value="201107191026" />
+				<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" />
+				<languageCode code="zh-TW" />
+				<recordTarget typeCode="RCT" contextControlCode="OP">
+					<patientRole classCode="PAT">
+						<id extension="55221143" root="2.16.886.104.100047" assigningAuthorityName="財團法人天主教湖口仁慈醫院" />
+						<patient classCode="PSN" determinerCode="INSTANCE">
+							<id extension="J211385855" root="2.16.886.101.20003.20001" assigningAuthorityName="行政院內政部" />
+							<name>張小美</name>
+							<administrativeGenderCode code="F" codeSystem="2.16.840.1.113883.5.1" codeSystemName="HL7" displayName="Female" />
+							<birthTime value="19730925" />
+						</patient>
+						<providerOrganization classCode="ORG" determinerCode="INSTANCE">
+							<id extension="1133060019" root="2.16.886.101.20003.20014" assigningAuthorityName="行政院衛生署" />
+							<name>財團法人天主教湖口仁慈醫院</name>
+						</providerOrganization>
+					</patientRole>
+				</recordTarget>
+				<author typeCode="AUT" contextControlCode="OP">
+					<time value="201107182210" />
+					<assignedAuthor classCode="ASSIGNED">
+						<id extension="M010" root="2.16.886.104.100047" assigningAuthorityName="財團法人天主教湖口仁慈醫院" />
+						<assignedPerson classCode="PSN" determinerCode="INSTANCE">
+							<name>劉正直</name>
+						</assignedPerson>
+					</assignedAuthor>
+				</author>
+				<custodian typeCode="CST">
+					<assignedCustodian classCode="ASSIGNED">
+						<representedCustodianOrganization classCode="ORG" determinerCode="INSTANCE">
+							<id extension="1133060019" root="2.16.886.101.20003.20014" assigningAuthorityName="行政院衛生署" />
+							<name>財團法人天主教湖口仁慈醫院</name>
+						</representedCustodianOrganization>
+					</assignedCustodian>
+				</custodian>
+				<legalAuthenticator typeCode="LA">
+					<time value="201107182300" />
+					<signatureCode code="S" />
+					<assignedEntity classCode="ASSIGNED">
+						<id extension="M010" root="2.16.886.104.100047" assigningAuthorityName="財團法人天主教湖口仁慈醫院" />
+						<assignedPerson classCode="PSN" determinerCode="INSTANCE">
+							<name>劉正直</name>
+						</assignedPerson>
+						<representedOrganization classCode="ORG" determinerCode="INSTANCE">
+							<id extension="1133060019" root="2.16.886.101.20003.20014" assigningAuthorityName="行政院衛生署" />
+							<name>財團法人天主教湖口仁慈醫院</name>
+						</representedOrganization>
+					</assignedEntity>
+				</legalAuthenticator>
+				<inFulfillmentOf typeCode="FLFS">
+					<order classCode="ACT" moodCode="RQO">
+						<id extension="R221589751-15" root="1.2.840.10008.5.1.4.31.8.80" assigningAuthorityName="DCM" />
+						<id extension="R221589751-15" root="1.2.840.10008.5.1.4.31.64.8214" assigningAuthorityName="DCM" />
+						<id extension="R221589751-15" root="1.2.840.10008.5.1.4.31.64.8215" assigningAuthorityName="DCM" />
+					</order>
+				</inFulfillmentOf>
+				<documentationOf typeCode="DOC">
+					<serviceEvent classCode="ACT" moodCode="EVN">
+						<id root="1.2.826.0.1.3680043.2.163.20100705162152.968.2" />
+						<effectiveTime>
+							<low value="201107120915" />
+							<high value="201107120918" />
+						</effectiveTime>
+						<performer typeCode="PRF">
+							<assignedEntity classCode="ASSIGNED">
+								<id extension="M010" root="2.16.886.104.100047" assigningAuthorityName="財團法人天主教湖口仁慈醫院" />
+								<id extension="2111" root="2.16.886.104.100047" assigningAuthorityName="財團法人天主教湖口仁慈醫院" />
+								<assignedPerson classCode="PSN" determinerCode="INSTANCE">
+									<name>劉正直</name>
+								</assignedPerson>
+								<representedOrganization classCode="ORG" determinerCode="INSTANCE">
+									<id extension="2111" root="2.16.886.101.20003.20014" assigningAuthorityName="行政院衛生署中央健康保險局" />
+									<name>胸腔科</name>
+								</representedOrganization>
+							</assignedEntity>
+						</performer>
+					</serviceEvent>
+				</documentationOf>
+				<componentOf>
+					<encompassingEncounter>
+						<effectiveTime value="201107120830" />
+						<encounterParticipant typeCode="ATND">
+							<templateId root="2.16.840.1.113883.10.20.6.2.2" />
+							<assignedEntity classCode="ASSIGNED">
+								<id extension="2111" root="2.16.886.104.100047" assigningAuthorityName="財團法人天主教湖口仁慈醫院" />
+								<assignedPerson classCode="PSN" determinerCode="INSTANCE">
+									<name>黃山田</name>
+								</assignedPerson>
+							</assignedEntity>
+						</encounterParticipant>
+					</encompassingEncounter>
+				</componentOf>
+				<component typeCode="COMP" contextConductionInd="true">
+					<structuredBody classCode="DOCBODY" moodCode="EVN">
+						<component typeCode="COMP" contextConductionInd="true">
+							<section classCode="DOCSECT" moodCode="EVN">
+								<code code="121181" codeSystem="1.2.840.10008.2.16.4" codeSystemName="DCM" displayName="DICOM Object Catalog" />
+								<entry typeCode="COMP" contextConductionInd="true">
+									<act classCode="ACT" moodCode="EVN">
+										<id root="1.2.826.0.1.3680043.2.163.20100705162152.968.2" />
+										<code code="113014" codeSystem="1.2.840.10008.2.16.4" codeSystemName="DCM" displayName="Study" />
+										<entryRelationship typeCode="COMP" contextConductionInd="true">
+											<act classCode="ACT" moodCode="EVN">
+												<id root="1.2.826.0.1.3680043.2.966.20100705162407.832.496" />
+												<code code="113015" codeSystem="1.2.840.10008.2.16.4" codeSystemName="DCM" displayName="Series">
+													<qualifier>
+														<name code="121139" codeSystem="1.2.840.10008.2.16.4" codeSystemName="DCM" displayName="Modality" />
+														<value code="US" codeSystem="1.2.840.10008.2.16.4" codeSystemName="DCM" displayName="Computed Tomography" />
+													</qualifier>
+												</code>
+												<entryRelationship typeCode="COMP" contextConductionInd="true">
+													<observation classCode="DGIMG" moodCode="EVN">
+														<id root="1.2.826.0.1.3680043.2.163.20100705163710.484.39916" />
+														<code code="1.2.840.10008.5.1.4.1.1.2" codeSystem="1.2.840.10008.2.6.1" codeSystemName="DCMUID" displayName="Computed Tomography Image Storage" />
+														<value xsi:type="CD" code="30173FB8D93306732A143D4167A24FEAA44F11F4" codeSystem="1.3.14.3.2.26" codeSystemName="SHA-1" displayName="Secure Hash Algorithm 1">
+															<qualifier>
+																<name code="121327" codeSystem="1.2.840.10008.2.16.4" codeSystemName="DCM" displayName="Full fidelity image" />
+															</qualifier>
+														</value>
+													</observation>
+												</entryRelationship>
+											</act>
+										</entryRelationship>
+									</act>
+								</entry>
+							</section>
+						</component>
+						<component typeCode="COMP" contextConductionInd="true">
+							<section classCode="DOCSECT" moodCode="EVN">
+								<code code="18782-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LONIC" displayName="Radiology Study Observation" />
+								<title>Findings</title>
+								<text>Acromion in Rotator Cuff Impingement</text>
+							</section>
+						</component>
+						<component typeCode="COMP" contextConductionInd="true">
+							<section classCode="DOCSECT" moodCode="EVN">
+								<code code="55286-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Physical examination by body areas" />
+								<title>檢查部位</title>
+								<text>胸部</text>
+								<entry typeCode="COMP" contextConductionInd="true">
+									<observation classCode="DGIMG" moodCode="EVN">
+										<code code="U" codeSystem="2.16.886.101.20003.20014" displayName="胸部" />
+									</observation>
+								</entry>
+							</section>
+						</component>
+						<component typeCode="COMP" contextConductionInd="true">
+							<section classCode="DOCSECT" moodCode="EVN">
+								<code code="33034-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Negative events" />
+								<title>檢查張數</title>
+								<entry typeCode="COMP" contextConductionInd="true">
+									<observation classCode="DGIMG" moodCode="EVN">
+										<code code="110028" codeSystem="1.2.840.10008.2.16.4" codeSystemName="DCM" displayName="Instances Imported" />
+										<value xsi:type="INT" value="1" />
+									</observation>
+								</entry>
+							</section>
+						</component>
+						<component typeCode="COMP" contextConductionInd="true">
+							<section classCode="DOCSECT" moodCode="EVN">
+								<code code="10164-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="History of present illness" />
+								<title>病史</title>
+								<text>No history of allergy</text>
+								<component typeCode="COMP" contextConductionInd="true">
+									<section classCode="DOCSECT" moodCode="EVN">
+										<code code="10154-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Chief complaint" />
+										<title>主訴</title>
+										<text>Chest pain and epigastric pain</text>
+									</section>
+								</component>	
+<component typeCode="COMP" contextConductionInd="true">
+<!-- 適應症 可選欄位-->
+<section classCode="DOCSECT" moodCode="EVN">
+<code code="19777-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Indications" />
+<title>適應症</title>
+<text>N/A</text>
+</section>
+</component>
+</section>
+						</component>
+						<component typeCode="COMP" contextConductionInd="true">
+							<section classCode="DOCSECT" moodCode="EVN">
+								<code code="52797-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Diagnosis ICD code" />
+								<title>疾病診斷</title>
+								<text>Liver disease, unspecified</text>
+								<entry typeCode="COMP" contextConductionInd="true">
+<observation classCode="OBS" moodCode="EVN">
+<code code="K76.9" codeSystem="2.16.840.1.113883.6.3" codeSystemName="ICD-10-CM" displayName="Liver disease, unspecified" /> 
+<statusCode code="Completed" /> 
+</observation>
+</entry>
+							</section>
+						</component>
+						<component typeCode="COMP" contextConductionInd="true">
+							<section classCode="DOCSECT" moodCode="EVN">
+								<code code="11515-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Records total" />
+								<title>影像報告結果</title>
+								<text> Echographic Findings------------------------------------------------------------------------------------1.Liver : Heterogenous parenchyma,no focal lesion. 2.IHD Size : Not dilated.3.CBD Size : 0.5CM.4.GB : Polyp(0.6cm).5.PV system : Patent. PV 0.1 cm , SV 0.2 cm , SMV 0.3 cm6.Pancreas : Head and Tail Gas blocked. H 0.1 cm, N 0.2 cm , B 0.3cm , T 0.4cm7.Spleen : Not enlarged,hypoechoic lesion(1.0*1.1cm).8.Kideny Rt : 11.3*5.4*0.4CM,Heterogenous parenchyma,Cyst(2.2*1.5cm). Lt : 9.1*4.7*0.3CM,Heterogenous parenchyma.9.Others : ------------------------------------------------------------------------------------ Ultasonic Diagnosis : 1. Parenchymal Liver Disease. 2. GB polyp. 3. Bil Parenchymal Renal Disease. 4. Splenic Hypoechoic Lesion,Suspect Accessory Spleen. 5. R't Renal Cyst. 6. 7. </text>
+								<component typeCode="COMP" contextConductionInd="true">
+									<section classCode="DOCSECT" moodCode="EVN">
+										<code code="29545-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Physical findings" />
+										<title>影像發現</title>
+										<text>同影像報告結果</text>
+									</section>
+								</component>
+								<component typeCode="COMP" contextConductionInd="true">
+									<section classCode="DOCSECT" moodCode="EVN">
+										<code code="44833-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Diagnosis preliminary" />
+										<title>臆斷</title>
+										<text>同影像報告結果</text>
+									</section>
+								</component>
+	<component typeCode="COMP" contextConductionInd="true">
+<!-- 註記 可選欄位-->
+<section classCode="DOCSECT" moodCode="EVN">
+<code code="51855-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Patient Note" />
+<title>註記</title>
+<text>N/A</text>
+</section>
+</component>
+		</section>
+						</component>
+	<component typeCode="COMP" contextConductionInd="true">
+<!--建議 -->
+<section classCode="DOCSECT" moodCode="EVN">
+<code code="18783-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Radiology Study recommendation" />
+<title>建議</title>
+<text>N/A</text>
+</section>
+</component>
+					</structuredBody>
+				</component>
+			</ClinicalDocument>
+		</cdp:StructuredContent>
+	</cdp:ContentContainer>
+<ds:Signature Id="IS0001" xmlns:ds="http://www.w3.org/2000/09/xmldsig#"><ds:SignedInfo><ds:CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" /><ds:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" /><ds:Reference URI=""><ds:Transforms><ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /></ds:Transforms><ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" /><!--Digest Value of Xml Document--><ds:DigestValue>T/HBDkGkTAICojKGe+VR1W2hLcgV18sRkv/1U8p/W90=</ds:DigestValue></ds:Reference></ds:SignedInfo><!--Signature Value of SignedInfo--><ds:SignatureValue>B54Lc5BRvEIRAPQ16tSolIt7Vepl/bWoPx/L+KOzMgAI9w1sSl7YwVZVnTCSx9lWQeFNRDKwej9cbHWqzIp/EuXZEPtSoLkJDXGObGxSaea0DQ2p+LinlPc42TIK/6pB1BhK9NzokEixNcsaAStSspl/q0UK/VrQP3FhDCHor2pUIaQ90pJpKR/LyrDoBjA7JuUeCY5Ajb6VAOFSW3bWOdTvHcqO8KCUGoq5f8jVyEZsD0MKwpcIgjggTyiedoQvrlDuMDYjTsxg/x25iomutZbVQ1EuEcHN1mHUmgPYvyfG/Igfn+25s2u/q1PN/16lTr8mOIeF/N921CwbQV+JnA==</ds:SignatureValue><ds:KeyInfo><ds:X509Data><ds:X509Certificate>MIIEvDCCA6SgAwIBAgIQAQAtHQAAAUw2wFsMAAAAADANBgkqhkiG9w0BAQsFADBJMQswCQYDVQQGEwJUVzEPMA0GA1UECh4GiExlP5ZiMSkwJwYDVQQLHiAAKG4simZ1KAApACBuLIpmkatOi2GRi0l7oXQGTi1fwzAeFw0xNTAzMjAxMDM1MThaFw0yMDAzMjAxMDM1MThaMDkxCzAJBgNVBAYTAlRXMRUwEwYDVQQKHgxuLIpmkatOi2pfacsxEzARBgNVBC4TCkZGRkZGRkZGRjAwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCnJzjI8koAxGyEDNOyeYhskn05riiChEkgXjh4i/itrwaijE8UEnNB5LzJrUXddXXmMui7KztABVB0cmoGdZvhLp2sDp6EBlhamwqL77OAKVIEK6+X1p4DAN3C9F1crc1URCeFBIM9bN/+5km5hoBU09GP1X4iPxeYMKENzXPKxdZBNgi42Y53EKG1p/7VMTFOweY+gjpagFjVg7RCwtyhNvz8fGkGtb3fFapbOkaJV5rrc0ZbfDSQnVWwBfDxIXrLYpQeX4hXT93GtgVIzVdcgIJmnDOw9LHgwgDEf5c/Yui/qVLz05HVJNPmY0MkxgWGZhH3R4hbBz0BrsUmD2rNAgMBAAGjggGuMIIBqjAdBgNVHQ4EFgQUXvRwHN04C/bBtIyiPM8aZSoEzkswHwYDVR0jBBgwFoAUKwe7ZfSbRUdb2mw93lL96q8k8vkwSgYDVR0fBEMwQTA/oD2gO4Y5aHR0cDovL2hjYW9jc3AubmF0Lmdvdi50dy9yZXBvc2l0b3J5L0hDQS9DUkwvY29tcGxldGUuY3JsMAsGA1UdDwQEAwIHgDCBowYIKwYBBQUHAQEEgZYwgZMwQgYIKwYBBQUHMAGGNmh0dHA6Ly9oY2FvY3NwLm5hdC5nb3YudHcvY2dpLWJpbi9PQ1NQL29jc3Bfc2VydmVyLmV4ZTBNBggrBgEFBQcwAoZBaHR0cDovL2hjYW9jc3AubmF0Lmdvdi50dy9yZXBvc2l0b3J5L0hDQS9DZXJ0cy9Jc3N1ZWRUb1RoaXNDQS5wN2IwFgYDVR0gBA8wDTALBgdghnZlAAMDMAAwUQYDVR0JBEowSDAVBgdghnYBZAIBMQoGCGCGdgFkAwIVMBYGB2CGdgFkAgIxCxMJc2Vjb25kYXJ5MBcGB2CGdgFkAm8xDAwKRkZGRkZGRkZGMDANBgkqhkiG9w0BAQsFAAOCAQEAdmJrPkA3qkGUIxkoI0lWA7w4wZ/bJz6KYYgNGX6P1BpsPpVktAYgncEB2hcFDAzs5ksxeAFJIKq75+3sombpozCulGMnh+xBv0gqgCvrPnBdFhq4t79Efu3L2Be1Ce5roanitmP76nNvHdYls8V/CvQhjkT33dnI0fPLwLe+PHdYbMrYMTILsfDsuvw8/bpIny40YITZ7tyIWkAGyYETXmdtypCZ0vXzJ4Hw+ehnzFxL8gu8N1ZrBOJMjapewoajL+uiM1BFqBVe1FNfey88ZsL3tNW0bWU4wlZZ0hg2pt9bt5Nv1KtbuT3lZPfmeGolBgNJmLcNnU700k24W3Fuew==</ds:X509Certificate></ds:X509Data></ds:KeyInfo><ds:Object xmlns:xades="http://uri.etsi.org/01903/v1.4.1#" xmlns:ds="http://www.w3.org/2000/09/xmldsig#"><xades:QualifyingProperties Target="#IS0001"><xades:UnsignedProperties><xades:UnsignedSignatureProperties><xades:SignatureTimeStamp><xades:EncapsulatedTimeStamp>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</xades:EncapsulatedTimeStamp></xades:SignatureTimeStamp></xades:UnsignedSignatureProperties></xades:UnsignedProperties></xades:QualifyingProperties></ds:Object></ds:Signature></cdp:ContentPackage>

@@ -1,0 +1,401 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<cdp:ContentPackage xmlns:cdp="http://www.hl7.org.tw/EMR/CDocumentPayload/v1.0" xmlns="urn:hl7-org:v3" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.hl7.org.tw/EMR/CDocumentPayload/v1.0 CDA_Package_V01.xsd">
+	<cdp:ContentContainer range="0">
+		<cdp:StructuredContent>
+			<ClinicalDocument classCode="DOCCLIN" moodCode="EVN" xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd">
+  <!--
+        ********************************************************
+        CDA Header
+        ********************************************************
+  -->
+  <typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3" />
+  <templateId extension="113_V104.0" root="2.16.886.101.20003.20014" />
+  <!--系統產生唯一編碼
+        1. 每產生一份文件都需指定新的OID。
+        2. 若以台大為例，台大之OID為2.16.886.111.100000.100000。
+  -->
+  <id extension="1.1234567.201008160001.3" root="2.16.886.111.100000.100000" />
+  <!--表示本文件為血液檢驗報告-->
+  <code code="11502-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Laboratory report.total" />
+  <title>血液檢驗報告</title>
+
+  <!-- 文件列印日期 格式為 : YYYY[MM[DD[HH[MM]]]]  西元年月日時分-->
+   <effectiveTime value="201107191058" />
+   <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" codeSystemName="Confidentiality" displayName="normal" />
+    <!-- 語言碼 -->
+  <languageCode code="zh-TW" />
+  <!-- 本文件之病患資料 -->
+  <recordTarget typeCode="RCT" contextControlCode="OP">
+    <patientRole classCode="PAT">
+      <!--4. 病歷號碼
+            @extension : 在該院之病歷號
+            @root : 該院之OID
+      -->
+
+      <id extension="123456" root="2.16.886.111.100000.100000" />
+      <!-- 病患基本資料 -->
+      <patient classCode="PSN" determinerCode="INSTANCE">
+      <!--3. 身分證號
+               @extension : 此病患之身分證號
+               @root : 2.16.886.101.20003.20001(內政部)
+			若使用居留證號碼，@root : 2.16.886.101.20003.20001(內政部)
+			若使用護照號碼，@root : 發給護照號碼機構之OID
+         -->
+      <id extension="C189372906" root="2.16.886.101.20003.20001" />
+        <!--5. 姓名-->
+        <name>趙錢孫</name>
+        <!--6. 性別
+               @code : 性別代碼
+               @codeSystem : 2.16.840.1.113883.5.1 (HL7 Vocabulary OID)
+         -->
+
+        <administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1" />
+        <!--7. 出生日期-->
+        <birthTime value="20000211" />
+      </patient>
+      <!--醫事機構 
+            @extension : 醫事機構代碼
+            @root : 2.16.886.101.20003.20014
+      -->
+      <providerOrganization classCode="ORG" determinerCode="INSTANCE">
+        <!--1.醫療機構代碼-->
+        <id extension="0401190010" root="2.16.886.101.20003.20014" />
+        <!--2. 醫療機構名稱-->
+
+        <name>臺大醫院</name>
+      </providerOrganization>
+    </patientRole>
+  </recordTarget>
+  <!-- author1 -->
+  <author typeCode="AUT" contextControlCode="OP">
+    <!--author1記錄日期時間-->
+    <time value="201106011201" />
+
+    <assignedAuthor classCode="ASSIGNED">
+      <!--author1醫院代碼-->
+      <id extension="D0001" root="2.16.886.111.100000.100000" />
+      <assignedPerson classCode="PSN" determinerCode="INSTANCE">
+        <!--24.醫事人員姓名
+                   包含臨床醫師及檢驗技術人員-->
+        <name>范一施</name>
+      </assignedPerson>
+    </assignedAuthor>
+
+  </author>
+  <!-- 本文件保管單位 -->
+  <custodian typeCode="CST">
+    <assignedCustodian classCode="ASSIGNED">
+      <representedCustodianOrganization classCode="ORG" determinerCode="INSTANCE">
+        <!--1.醫療機構代碼-->
+        <id extension="0401190010" root="2.16.886.101.20003.20014" />
+        <!--2. 醫療機構名稱-->
+        <name>臺大醫院</name>
+
+      </representedCustodianOrganization>
+    </assignedCustodian>
+  </custodian>
+  <!--8. 檢驗單號 
+            醫療院所檢驗系統之檢驗單號 -->
+  <inFulfillmentOf typeCode="FLFS">
+    <order classCode="ACT" moodCode="RQO">
+      <id extension="9876" root="2.16.886.111.100000.100000" />
+    </order>
+  </inFulfillmentOf>
+
+  <componentOf typeCode="COMP">
+    <encompassingEncounter classCode="ENC" moodCode="EVN">
+      <!-- 14. 採檢日期時間 -->
+      <effectiveTime value="201106010845" />
+    </encompassingEncounter>
+  </componentOf>
+  <!--
+        ********************************************************
+        CDA Body Level 2 
+        ********************************************************
+  -->
+  <component typeCode="COMP" contextConductionInd="true">
+    <structuredBody classCode="DOCBODY" moodCode="EVN">
+
+      <!--
+        檢驗結果
+        ********************************************************
+         Results section
+        ********************************************************
+      -->      
+      <component typeCode="COMP" contextConductionInd="true">
+        <section classCode="DOCSECT" moodCode="EVN">
+          <code code="30954-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Relevant diagnostic tests and/or laboratory data" />
+ 
+          <title>檢驗結果</title>					  
+                  <!-- 欄位 16. ~ 23. -->
+          <text>
+            <table>
+              <tbody>
+
+	           <tr><td>(9)檢體來源</td><td>靜脈</td><td>(10)檢體類別</td><td>Whole blood</td><td>(11)檢體類別說明</td><td>血液</td></tr>
+	           <tr><td>(12)健保檢驗項目代號</td><td>08011C</td><td>(13)健保檢驗項目名稱</td><td><content ID="NHI_08011C">全套血液檢查 CBC-Ｉ</content></td><td>(15)收件日期時間</td><td>2011年06月01日09點00分</td></tr>
+              </tbody>
+
+           </table>
+
+           <table>
+              <thead>
+                <tr><td>項次</td><td>報告日期時間</td><td>檢驗項目名稱</td><td>檢驗報告結果值</td><td>單位</td><td>檢驗方法</td><td>參考值</td><td>備註</td></tr>
+
+              </thead>
+              <tbody>
+                <tr><td>1</td><td>201106010935</td><td>Leukocytes in Blood by Automated count</td><td>7.33</td><td>10^3/ul</td><td>Automated count</td><td>3.8-10.0</td><td> </td></tr>
+                <tr><td>2</td><td>201106010935</td><td>Erythrocytes in Blood by Automated count</td><td>5.16</td><td>10^6/ul</td><td>Automated count</td><td>4.50-5.70</td><td></td></tr>
+
+                 <tr><td>3</td><td>201106010935</td><td>Hemoglobin in Blood by calculation</td><td>15.4</td><td>g/dl</td><td>Calculated</td><td>13.0-18.0</td><td> </td></tr>
+                 <tr><td>4</td><td>201106010935</td><td>Hematocrit of Blood by Automated count</td><td>46.8</td><td>%</td><td>Automated count</td><td>40.0-54.0</td><td> </td></tr>
+
+                 <tr><td>5</td><td>201106010935</td><td>Erythrocyte mean corpuscular volume by Automated count</td><td>90.6</td><td>fL</td><td>Automated count</td><td>81.0-98.0</td><td> </td></tr>
+                 <tr><td>6</td><td>201106010935</td><td>Erythrocyte mean corpuscular hemoglobin by Automated count</td><td>31.7</td><td>pg</td><td>Automated count</td><td>27.0-32.0</td><td> </td></tr>
+
+                 <tr><td>7</td><td>201106010935</td><td>Erythrocyte mean corpuscular hemoglobin concentration by Automated count</td><td>35.0</td><td>g/dl</td><td>Automated count</td><td>32.0-36.0</td><td> </td></tr>
+                 <tr><td>8</td><td>201106010935</td><td>Platelets in Blood by Automated count</td><td>324</td><td>10^3/ul</td><td>Automated count</td><td>140-450</td><td> </td></tr>
+
+              </tbody>
+            </table>
+            </text>
+                 
+             <entry>
+             <organizer classCode="BATTERY" moodCode="EVN"> 
+             <code code="58410-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Complete blood count (hemogram) panel">
+                <originalText>
+                    <reference value="#NHI_08011C" />
+                </originalText>
+
+				<!--  檢驗項目名稱代號 
+                        12. 健保檢驗項目代號如08001C
+                        13. 健保檢驗項目名稱如紅血球計數RBC-->
+                <translation code="08011C" codeSystem="2.16.886.101.20003.20014" codeSystemName="全民健保檢驗項目代碼" displayName="全套血液檢查 CBC-Ｉ" />
+             </code>
+				<statusCode code="completed" />
+                  <!-- 15. 收件日期 -->
+				<effectiveTime value="201106010900" />
+	            <specimen typeCode="SPC">
+					<specimenRole classCode="SPEC">
+					  <specimenPlayingEntity classCode="ENT" determinerCode="INSTANCE">					  
+                  <!-- 10. 檢體類別 
+                               如Urine、Blood-->
+
+					  <code code=" BLD" codeSystem="2.16.840.1.113883.11.19464" codeSystemName="SpecimenEntityType" displayName="Whole blood" />	  
+                  <!-- 11. 檢體類別說明 
+                               如血液、尿液-->
+					  <name>血液</name> 
+                  <!-- 10. 檢體來源 
+                               如肝，某靜脈-->		
+                        <desc>靜脈抽血檢查</desc>		  
+					  </specimenPlayingEntity>
+				   </specimenRole>
+				</specimen>
+			<component>
+                <observation classCode="OBS" moodCode="EVN">
+
+                  <!-- 16. 項次
+							  如CBC具有多個檢驗結果項次-->		
+                 <id extension="1" /> 
+                  <!-- 18. 檢驗項目名稱 
+                               檢驗項目名稱(LOINC名稱)-->		
+                  <code code="6690-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Leukocytes in Blood by Automated count">
+                  </code>
+                  <!-- 23. 備註 -->		
+                  <text>備註1文字敘述</text>
+                  <!-- 17. 報告日期時間 -->		
+				  <effectiveTime value="201106010935" />
+                  <!-- 19. 檢驗報告結果值、
+                               檢驗報告結果，如Positive、25…等
+                         20. 單位
+                               如mg/ml，莫耳濃度…等
+						若為檢驗結果值的資料型態為文字，則呈現方式為
+							<value xsi:type="ST">positive</value>
+						若為檢驗結果值的資料型態為文字且有單位，則呈現方式為
+							<value xsi:type="ST"> >1 ppm </value>
+						若為檢驗結果值的資料型態為數字區間，則呈現方式為
+							<value xsi:type="IVL_PQ">
+								<low value="3.80" unit="10^3/ul"/>
+								<high value="10.0" unit="10^3/ul"/>
+							</value>	
+					-->	
+				  <value xsi:type="PQ" value="7.33" unit="10^3/ul" />
+
+                  <!-- 21. 檢驗方法 
+                               如酵素免疫分析法(EIA)-->		
+					<methodCode code="0047" codeSystem="2.16.840.1.113883.11.14079" codeSystemName="ObservationMethod" displayName="Automated count" />
+                  <referenceRange>
+						<observationRange>
+	                    <!-- 22. 參考值
+									Positive，0~25…等。
+								若參考值的資料型態為單一數值，則呈現方式為
+									<value xsi:type="PQ" value="5.0" unit="10^3/ul"/>	
+								若為參考值的資料型態為文字，則呈現方式為
+									<value xsi:type="ST">positive</value>
+						-->
+							<value xsi:type="IVL_PQ">
+								<low value="3.80" unit="10^3/ul" />
+								<high value="10.0" unit="10^3/ul" />
+							</value>
+
+						</observationRange>
+					</referenceRange>
+                </observation>
+			</component>
+			<component>
+                <observation classCode="OBS" moodCode="EVN">
+                 <id extension="2" /> 
+                  <code code="789-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Erythrocytes in Blood by Automated count">  
+                  </code>
+                  <text>備註2文字敘述</text>
+
+				  <effectiveTime value="201106010935" />
+				  <value xsi:type="PQ" value="5.16" unit="10^6/ul" />
+					<methodCode code="0047" codeSystem="2.16.840.1.113883.11.14079" codeSystemName="ObservationMethod" displayName="Automated count" />
+                  <referenceRange>
+						<observationRange>
+							<value xsi:type="IVL_PQ">
+								<low value="4.50" unit="10^6/ul" />
+								<high value="5.70" unit="10^6/ul" />
+							</value>
+
+						</observationRange>
+					</referenceRange>
+                </observation>
+			</component>
+			<component>
+                <observation classCode="OBS" moodCode="EVN">
+                 <id extension="3" /> 
+                  <code code="20509-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Hemoglobini in Blood by calculation">
+                  </code>
+
+                  <text>備註3文字敘述 </text>
+				  <effectiveTime value="201106010935" />
+				  <value xsi:type="PQ" value="15.4" unit="g/dl" />
+                  <referenceRange>
+						<observationRange>
+							<value xsi:type="IVL_PQ">
+								<low value="13.0" unit="g/dl" />
+								<high value="18.0" unit="g/dl" />
+
+							</value>
+						</observationRange>
+					</referenceRange>
+                </observation>
+			</component>
+			<component>
+                <observation classCode="OBS" moodCode="EVN">
+                 <id extension="4" /> 
+                  <code code="4544-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Hematocrit of Blood by Automated count">
+
+                  </code>
+                  <text>備註4 文字敘述</text>
+				  <effectiveTime value="201106010935" />
+				  <value xsi:type="PQ" value="46.8" unit="%" />
+					<methodCode code="0047" codeSystem="2.16.840.1.113883.11.14079" codeSystemName="ObservationMethod" displayName="Automated count" />
+                  <referenceRange>
+						<observationRange>
+							<value xsi:type="IVL_PQ">
+
+								<low value="40.0" unit="%" />
+								<high value="54.0" unit="%" />
+							</value>
+						</observationRange>
+					</referenceRange>
+                </observation>
+			</component>
+			<component>
+                <observation classCode="OBS" moodCode="EVN">
+
+                 <id extension="5" /> 
+                  <code code="787-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Erythrocyte mean corpuscular volume by Automated count">
+                  </code>
+                  <text>備註5 文字敘述</text>
+				  <effectiveTime value="201106010935" />
+				  <value xsi:type="PQ" value="90.6" unit="fL" />
+					<methodCode code="0047" codeSystem="2.16.840.1.113883.11.14079" codeSystemName="ObservationMethod" displayName="Automated count" />
+                  <referenceRange>
+						<observationRange>
+
+							<value xsi:type="IVL_PQ">
+								<low value="81.0" unit="fL" />
+								<high value="98.0" unit="fL" />
+							</value>
+						</observationRange>
+					</referenceRange>
+                </observation>
+			</component>
+			<component>
+
+                <observation classCode="OBS" moodCode="EVN">
+                 <id extension="6" /> 
+                  <code code="785-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Erythrocyte mean corpuscular hemoglobin by Automated count">
+                  </code>
+                  <text>備註6文字敘述</text>
+				  <effectiveTime value="201106010935" />
+				  <value xsi:type="PQ" value="31.7" unit="pg" />
+					<methodCode code="0047" codeSystem="2.16.840.1.113883.11.14079" codeSystemName="ObservationMethod" displayName="Automated count" />
+                  <referenceRange>
+
+						<observationRange>
+							<value xsi:type="IVL_PQ">
+								<low value="27" unit="pg" />
+								<high value="32" unit="pg" />
+							</value>
+						</observationRange>
+					</referenceRange>
+                </observation>
+			</component>
+
+			<component>
+                <observation classCode="OBS" moodCode="EVN">
+                 <id extension="7" /> 
+                  <code code="786-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Erythrocyte mean corpuscular hemoglobin concentration by Automated count">
+                  </code>
+                  <text>備註7文字敘述</text>
+				  <effectiveTime value="201106010935" />
+				  <value xsi:type="PQ" value="35.0" unit="g/dl" />
+					<methodCode code="0047" codeSystem="2.16.840.1.113883.11.14079" codeSystemName="ObservationMethod" displayName="Automated count" />
+
+                  <referenceRange>
+						<observationRange>
+							<value xsi:type="IVL_PQ">
+								<low value="32.0" unit="g/dl" />
+								<high value="36.0" unit="g/dl" />
+							</value>
+						</observationRange>
+					</referenceRange>
+                </observation>
+
+			</component>
+			<component>
+                <observation classCode="OBS" moodCode="EVN">
+                 <id extension="8" /> 
+                  <code code="777-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Platelets in Blood by Automated count">
+				    </code>
+                  <text>備註8文字敘述</text>
+				  <effectiveTime value="201106010935" />
+				  <value xsi:type="PQ" value="324" unit="10^3/ul" />
+
+					<methodCode code="0047" codeSystem="2.16.840.1.113883.11.14079" codeSystemName="ObservationMethod" displayName="Automated count" />
+                  <referenceRange>
+						<observationRange>
+							<value xsi:type="IVL_PQ">
+								<low value="140" unit="10^3/ul" />
+								<high value="450" unit="10^3/ul" />
+							</value>
+						</observationRange>
+					</referenceRange>
+
+                </observation>
+            </component>
+		 </organizer>
+        </entry>
+                          
+       </section>
+      </component> 
+    </structuredBody>
+  </component>
+</ClinicalDocument>
+		</cdp:StructuredContent>
+	</cdp:ContentContainer><ds:Signature Id="IS0001" xmlns:ds="http://www.w3.org/2000/09/xmldsig#"><ds:SignedInfo><ds:CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" /><ds:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" /><ds:Reference URI=""><ds:Transforms><ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /></ds:Transforms><ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" /><!--Digest Value of Xml Document--><ds:DigestValue>pN6q3dkaZEWyYLpMy9S477K5lj4k6o9fqdwxnAiQI4g=</ds:DigestValue></ds:Reference></ds:SignedInfo><!--Signature Value of SignedInfo--><ds:SignatureValue>YkhoNrjwq9fND07Rjfzh3udI4MEYLVrrl3dn0t16ghKxSUr9KGMoDXBiTkr5LwLmu/LwSib5yQvd64lBVXPUxnzfs0lxRGsNcnalvnOX3BNBOOY378Rzy6Qzn4i89i4VNAVkYq8136RLoNJeQIfdsnDngzd9n70MIjMzbH5wig5So9jIALJuqxeQD4DdcjgW+CEjcRIFBeMqGoKGQj+nTVeiNExoh+TUyRiJ3ud9gzmkPC1X5TFpNRtB4uytUtsTo2W1fuAoAPfBQGwP69JLW2B8np+Ji+uAnWaYdrOG9pEgB0aRf65frrYfm/AaYg63IzmMKL1UEeUu3dRm0Fn1Dg==</ds:SignatureValue><ds:KeyInfo><ds:X509Data><ds:X509Certificate>MIIEvDCCA6SgAwIBAgIQAQAtHQAAAUw2wFsMAAAAADANBgkqhkiG9w0BAQsFADBJMQswCQYDVQQGEwJUVzEPMA0GA1UECh4GiExlP5ZiMSkwJwYDVQQLHiAAKG4simZ1KAApACBuLIpmkatOi2GRi0l7oXQGTi1fwzAeFw0xNTAzMjAxMDM1MThaFw0yMDAzMjAxMDM1MThaMDkxCzAJBgNVBAYTAlRXMRUwEwYDVQQKHgxuLIpmkatOi2pfacsxEzARBgNVBC4TCkZGRkZGRkZGRjAwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCnJzjI8koAxGyEDNOyeYhskn05riiChEkgXjh4i/itrwaijE8UEnNB5LzJrUXddXXmMui7KztABVB0cmoGdZvhLp2sDp6EBlhamwqL77OAKVIEK6+X1p4DAN3C9F1crc1URCeFBIM9bN/+5km5hoBU09GP1X4iPxeYMKENzXPKxdZBNgi42Y53EKG1p/7VMTFOweY+gjpagFjVg7RCwtyhNvz8fGkGtb3fFapbOkaJV5rrc0ZbfDSQnVWwBfDxIXrLYpQeX4hXT93GtgVIzVdcgIJmnDOw9LHgwgDEf5c/Yui/qVLz05HVJNPmY0MkxgWGZhH3R4hbBz0BrsUmD2rNAgMBAAGjggGuMIIBqjAdBgNVHQ4EFgQUXvRwHN04C/bBtIyiPM8aZSoEzkswHwYDVR0jBBgwFoAUKwe7ZfSbRUdb2mw93lL96q8k8vkwSgYDVR0fBEMwQTA/oD2gO4Y5aHR0cDovL2hjYW9jc3AubmF0Lmdvdi50dy9yZXBvc2l0b3J5L0hDQS9DUkwvY29tcGxldGUuY3JsMAsGA1UdDwQEAwIHgDCBowYIKwYBBQUHAQEEgZYwgZMwQgYIKwYBBQUHMAGGNmh0dHA6Ly9oY2FvY3NwLm5hdC5nb3YudHcvY2dpLWJpbi9PQ1NQL29jc3Bfc2VydmVyLmV4ZTBNBggrBgEFBQcwAoZBaHR0cDovL2hjYW9jc3AubmF0Lmdvdi50dy9yZXBvc2l0b3J5L0hDQS9DZXJ0cy9Jc3N1ZWRUb1RoaXNDQS5wN2IwFgYDVR0gBA8wDTALBgdghnZlAAMDMAAwUQYDVR0JBEowSDAVBgdghnYBZAIBMQoGCGCGdgFkAwIVMBYGB2CGdgFkAgIxCxMJc2Vjb25kYXJ5MBcGB2CGdgFkAm8xDAwKRkZGRkZGRkZGMDANBgkqhkiG9w0BAQsFAAOCAQEAdmJrPkA3qkGUIxkoI0lWA7w4wZ/bJz6KYYgNGX6P1BpsPpVktAYgncEB2hcFDAzs5ksxeAFJIKq75+3sombpozCulGMnh+xBv0gqgCvrPnBdFhq4t79Efu3L2Be1Ce5roanitmP76nNvHdYls8V/CvQhjkT33dnI0fPLwLe+PHdYbMrYMTILsfDsuvw8/bpIny40YITZ7tyIWkAGyYETXmdtypCZ0vXzJ4Hw+ehnzFxL8gu8N1ZrBOJMjapewoajL+uiM1BFqBVe1FNfey88ZsL3tNW0bWU4wlZZ0hg2pt9bt5Nv1KtbuT3lZPfmeGolBgNJmLcNnU700k24W3Fuew==</ds:X509Certificate></ds:X509Data></ds:KeyInfo><ds:Object xmlns:xades="http://uri.etsi.org/01903/v1.4.1#" xmlns:ds="http://www.w3.org/2000/09/xmldsig#"><xades:QualifyingProperties Target="#IS0001"><xades:UnsignedProperties><xades:UnsignedSignatureProperties><xades:SignatureTimeStamp><xades:EncapsulatedTimeStamp>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</xades:EncapsulatedTimeStamp></xades:SignatureTimeStamp></xades:UnsignedSignatureProperties></xades:UnsignedProperties></xades:QualifyingProperties></ds:Object></ds:Signature></cdp:ContentPackage>
